@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CoreAPI_EL.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,5 +13,8 @@ namespace CoreAPI_DAL
         {
 
         }
+
+        //Tablolara ait sanal dbSet
+        public virtual DbSet<Assignment> Assignments { get; set; }
     }
 }

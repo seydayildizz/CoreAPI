@@ -1,0 +1,13 @@
+C:\Users\103SABAH_ŞEYDA\source\repos\CoreAPI\CoreAPI_EL\bin\Debug\netcoreapp3.1\CoreAPI_EL.deps.json
+C:\Users\103SABAH_ŞEYDA\source\repos\CoreAPI\CoreAPI_EL\bin\Debug\netcoreapp3.1\CoreAPI_EL.runtimeconfig.json
+C:\Users\103SABAH_ŞEYDA\source\repos\CoreAPI\CoreAPI_EL\bin\Debug\netcoreapp3.1\CoreAPI_EL.runtimeconfig.dev.json
+C:\Users\103SABAH_ŞEYDA\source\repos\CoreAPI\CoreAPI_EL\bin\Debug\netcoreapp3.1\CoreAPI_EL.dll
+C:\Users\103SABAH_ŞEYDA\source\repos\CoreAPI\CoreAPI_EL\bin\Debug\netcoreapp3.1\CoreAPI_EL.pdb
+C:\Users\103SABAH_ŞEYDA\source\repos\CoreAPI\CoreAPI_EL\obj\Debug\netcoreapp3.1\CoreAPI_EL.csproj.AssemblyReference.cache
+C:\Users\103SABAH_ŞEYDA\source\repos\CoreAPI\CoreAPI_EL\obj\Debug\netcoreapp3.1\CoreAPI_EL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\103SABAH_ŞEYDA\source\repos\CoreAPI\CoreAPI_EL\obj\Debug\netcoreapp3.1\CoreAPI_EL.AssemblyInfoInputs.cache
+C:\Users\103SABAH_ŞEYDA\source\repos\CoreAPI\CoreAPI_EL\obj\Debug\netcoreapp3.1\CoreAPI_EL.AssemblyInfo.cs
+C:\Users\103SABAH_ŞEYDA\source\repos\CoreAPI\CoreAPI_EL\obj\Debug\netcoreapp3.1\CoreAPI_EL.csproj.CoreCompileInputs.cache
+C:\Users\103SABAH_ŞEYDA\source\repos\CoreAPI\CoreAPI_EL\obj\Debug\netcoreapp3.1\CoreAPI_EL.dll
+C:\Users\103SABAH_ŞEYDA\source\repos\CoreAPI\CoreAPI_EL\obj\Debug\netcoreapp3.1\CoreAPI_EL.pdb
+C:\Users\103SABAH_ŞEYDA\source\repos\CoreAPI\CoreAPI_EL\obj\Debug\netcoreapp3.1\CoreAPI_EL.genruntimeconfig.cache

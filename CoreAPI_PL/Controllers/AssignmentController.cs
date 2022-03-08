@@ -1,4 +1,4 @@
-﻿using CoreAPI_BLL.Implementations;
+﻿using CoreAPI_BLL.Interfaces;
 using CoreAPI_EL.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -19,8 +19,8 @@ namespace CoreAPI_PL.Controllers
     [ApiController]
     public class AssignmentController : ControllerBase
     {
-        private readonly UnitOfWork _unitOfWork;
-        public AssignmentController(UnitOfWork unitOfWork)
+        private readonly IUnitOfWork _unitOfWork;
+        public AssignmentController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
@@ -46,7 +46,7 @@ namespace CoreAPI_PL.Controllers
             try
             {
                 var assignment = _unitOfWork.AssignmentRepository.GetFirstOrDefault(x => x.Id == id);
-                if (assignment!=null)
+                if (assignment != null)
                 {
                     return Ok(assignment);
                 }
@@ -63,6 +63,7 @@ namespace CoreAPI_PL.Controllers
         {
             try
             {
+                model.CreatedDate = DateTime.Now;
                 bool result = _unitOfWork.AssignmentRepository.Add(model);
                 if (result)
                 {
@@ -80,18 +81,20 @@ namespace CoreAPI_PL.Controllers
         // public IActionResult DeleteProduct([FromQuery] int id)
 
         //api/Products/DeleteProduct/1
-        //[HttpDelete("{id}")]
+        [HttpDelete("{id}")]
         //public IActionResult DeleteProduct(int id)
 
-        [HttpGet("[action]/{id}")]
-        public IActionResult DeleteAssignment(int id)
+        //[HttpGet("[action]/{id}")]
+
+        //api/Assignment/DeleteProduct?id
+        public IActionResult DeleteAssignment([FromQuery]int id)
         {
             try
             {
-                if (id>0)
+                if (id > 0)
                 {
                     var data = _unitOfWork.AssignmentRepository.GetFirstOrDefault(x => x.Id == id);
-                    if (data!=null)
+                    if (data != null)
                     {
                         bool result = _unitOfWork.AssignmentRepository.Delete(data);
                         if (result)
@@ -112,16 +115,19 @@ namespace CoreAPI_PL.Controllers
 
         //api/Assignment/id
         [HttpPut("{id}")]
-        public IActionResult UpdateAssignment(int id,Assignment model)
+        public IActionResult UpdateAssignment(int id, Assignment model)
         {
             try
             {
-                if (id>0)
+                if (id > 0)
                 {
                     var currentAssignment = _unitOfWork.AssignmentRepository.GetFirstOrDefault(x => x.Id == id);
                     if (currentAssignment != null)
                     {
-                        currentAssignment.Description = model.Description;
+                        currentAssignment.Description = string.IsNullOrEmpty(model.Description) 
+                            ? currentAssignment.Description 
+                            : model.Description;
+
                         currentAssignment.IsCompleted = model.IsCompleted;
                         bool result = _unitOfWork.AssignmentRepository.Update(currentAssignment);
                         if (result)

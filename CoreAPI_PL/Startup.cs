@@ -1,3 +1,5 @@
+using CoreAPI_BLL.Implementations;
+using CoreAPI_BLL.Interfaces;
 using CoreAPI_DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -32,6 +34,11 @@ namespace CoreAPI_PL
                 options.UseSqlServer("server=SUNUM2\\MSSQLSERVER01; database=AssignmentDB; Integrated security=True");
             }
             );
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CoreApi_PL", Version = "v1" });
+            });
             services.AddControllers();
             
         }

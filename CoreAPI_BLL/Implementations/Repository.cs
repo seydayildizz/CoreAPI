@@ -9,7 +9,7 @@ using System.Text;
 
 namespace CoreAPI_BLL.Implementations
 {
-    public class Repository<T> : IRepository<T> where T : class, new()
+    public class Repository<T> : IRepositoryBase<T> where T : class, new()
     {
         protected readonly MyContext _myContext;
 
